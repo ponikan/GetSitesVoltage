@@ -8,10 +8,11 @@ import java.util.regex.Pattern;
 public class GetVoltageMap {
 
     public static Map<String, Cabinet> getVoltageMap() {
+
         List<String> siteNameList = GetAllWorkingSitesList.getWorkingSites();
         List<String> allStringsFromMMlFile = ReadAllStringsFromMMLFile.getAllStrings();
-         // Map<String, Cabinet> pointsMap = new HashMap<>();
-        Map<String, Cabinet> pointsMap = new TreeMap<>();
+         Map<String, Cabinet> pointsMap = new HashMap<>();
+
         int counter = -1;
         Pattern pattern = Pattern.compile("\\d.*"); // регулярка на цифры
 

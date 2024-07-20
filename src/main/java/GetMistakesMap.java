@@ -5,7 +5,7 @@ import java.util.TreeMap;
 public class GetMistakesMap {
     public static Map<String, Cabinet> mistakesMap() {
 
-        Map<String, Cabinet> mistakesMap = new TreeMap<>();
+        Map<String, Cabinet> mistakesMap = new HashMap<>();
         Map<String, Cabinet> pointsMap = GetVoltageMap.getVoltageMap();
 
         for (Map.Entry<String, Cabinet> entry : pointsMap.entrySet()) {

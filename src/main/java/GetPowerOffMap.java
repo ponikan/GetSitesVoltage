@@ -6,11 +6,10 @@ public class GetPowerOffMap {
 
     public static Map<String, Cabinet> powerOffMap(){
 
-       // Map<String,Cabinet> powerOffMap = new HashMap<>();
-        Map<String,Cabinet> powerOffMap= new TreeMap<>();
+       Map<String,Cabinet> powerOffMap = new HashMap<>();
         Map<String, Cabinet> pointsMap = GetVoltageMap.getVoltageMap();
+
         for (Map.Entry<String,Cabinet> entry : pointsMap.entrySet()){
-           // System.out.println(entry.getKey() + " : " + entry.getValue());
 
             if(entry.getValue().getPoint1() !=null && entry.getValue().getPoint2() !=null){
                 Class classPoint1 = entry.getValue().getPoint1().getClass();
