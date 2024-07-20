@@ -6,7 +6,7 @@ public class GetPowerOffMap {
 
     public static Map<String, Cabinet> powerOffMap(){
 
-       Map<String,Cabinet> powerOffMap = new HashMap<>();
+       Map<String,Cabinet> powerOffMap = new TreeMap<>();
         Map<String, Cabinet> pointsMap = GetVoltageMap.getVoltageMap();
 
         for (Map.Entry<String,Cabinet> entry : pointsMap.entrySet()){

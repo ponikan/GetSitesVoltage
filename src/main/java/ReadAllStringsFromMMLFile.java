@@ -9,7 +9,7 @@ import java.util.List;
 public class ReadAllStringsFromMMLFile {
     public static List<String> getAllStrings(){
         List<String> allStrings = new ArrayList<>(); // список для всех строк из исходного файла
-        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(Constant.FILENAME_IN))){
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(FindPath.findPath(Constant.FILENAME_IN)))){
             while (bufferedReader.ready()){
                 allStrings.add(bufferedReader.readLine());
             }

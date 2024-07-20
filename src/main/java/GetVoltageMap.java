@@ -11,7 +11,7 @@ public class GetVoltageMap {
 
         List<String> siteNameList = GetAllWorkingSitesList.getWorkingSites();
         List<String> allStringsFromMMlFile = ReadAllStringsFromMMLFile.getAllStrings();
-         Map<String, Cabinet> pointsMap = new HashMap<>();
+         Map<String, Cabinet> pointsMap = new TreeMap<>();
 
         int counter = -1;
         Pattern pattern = Pattern.compile("\\d.*"); // регулярка на цифры
