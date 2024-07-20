@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class WrightPowerOffFile {
     public static void wrightAllWorkingSitesFile(){
-        try(BufferedWriter bufferedWriterAllWorkingSites = new BufferedWriter(new FileWriter(Constant.FILENAME_POWER_OF))){
+        try(BufferedWriter bufferedWriterAllWorkingSites = new BufferedWriter(new FileWriter(Constant.FILENAME_POWER_OFF))){
            Map<String, Cabinet> voltageMap = GetPowerOffMap.powerOffMap();
             for (Map.Entry<String, Cabinet> entry : voltageMap.entrySet()){
                 bufferedWriterAllWorkingSites.write(entry.getKey() + " : " + entry.getValue()+ "\n");
