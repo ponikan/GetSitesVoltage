@@ -5,4 +5,5 @@ public class Constant {
         public static final String FILENAME_OUT = "C:\\Users\\user\\Desktop\\MML_OUTS\\PowerAll.txt";
         public static final String FILENAME_POWER_OFF = "C:\\Users\\user\\Desktop\\MML_OUTS\\PowerOff.txt";
         public static final String FILENAME_POWER_MISTAKES = "C:\\Users\\user\\Desktop\\MML_OUTS\\Mistakes.txt";
+
 }

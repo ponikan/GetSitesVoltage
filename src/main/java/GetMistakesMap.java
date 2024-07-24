@@ -10,20 +10,34 @@ public class GetMistakesMap {
 
         for (Map.Entry<String, Cabinet> entry : pointsMap.entrySet()) {
             if (entry.getValue().getPoint1() != null && entry.getValue().getPoint2() != null) {
-                if (entry.getValue().getPoint1() instanceof String && entry.getValue().getPoint2() instanceof String) {
+              if (entry.getValue().getPoint1() instanceof Double && entry.getValue().getPoint2() instanceof Double){
+                  if ((Double) entry.getValue().getPoint1() < 39.0 || (Double) entry.getValue().getPoint2() < 39.0){
+                      mistakesMap.put(entry.getKey(), entry.getValue());
+                  }
+              }else if (entry.getValue().getPoint1() instanceof String && entry.getValue().getPoint2() instanceof String) {
                     System.out.println("NotOK!!! нет измерений");
                         mistakesMap.put(entry.getKey(), entry.getValue());
                 } else if (entry.getValue().getPoint1() instanceof String && entry.getValue().getPoint2() instanceof Double) {
-                    System.out.println("NotOK!!! нет измерений на 1-й стойке");
+                  if ((Double) entry.getValue().getPoint2() < 39.0){
+                      mistakesMap.put(entry.getKey(), entry.getValue());
+
+                  } System.out.println("NotOK!!! нет измерений на 1-й стойке");
                     mistakesMap.put(entry.getKey(), entry.getValue());
                 }else if (entry.getValue().getPoint1() instanceof Double && entry.getValue().getPoint2() instanceof String) {
-                    System.out.println("NotOK!!! нет измерений на 2-й стойке");
+                  if ((Double) entry.getValue().getPoint1() < 39.0){
+                      mistakesMap.put(entry.getKey(), entry.getValue());
+
+                  }
+                  System.out.println("NotOK!!! нет измерений на 2-й стойке");
                     mistakesMap.put(entry.getKey(), entry.getValue());
                 }
             }else if (entry.getValue().getPoint1() != null && entry.getValue().getPoint2() == null) {
                 if (entry.getValue().getPoint1() instanceof String) {
                         mistakesMap.put(entry.getKey(), entry.getValue());
                 }
+                    if (entry.getValue().getPoint1() instanceof Double && (Double) entry.getValue().getPoint1() < 39.0){
+                        mistakesMap.put(entry.getKey(), entry.getValue());
+                    }
             }
         }
         return mistakesMap;

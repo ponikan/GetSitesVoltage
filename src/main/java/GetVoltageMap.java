@@ -9,7 +9,7 @@ public class GetVoltageMap {
 
     public static Map<String, Cabinet> getVoltageMap() {
 
-        List<String> siteNameList = GetAllWorkingSitesList.getWorkingSites();
+        List<String> siteNameList = GetAllWorkingSitesNameList.getWorkingSites();
         List<String> allStringsFromMMlFile = ReadAllStringsFromMMLFile.getAllStrings();
          Map<String, Cabinet> pointsMap = new TreeMap<>();
 

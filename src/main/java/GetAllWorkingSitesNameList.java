@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetAllWorkingSitesList {
+public class GetAllWorkingSitesNameList {
     public static List<String> getWorkingSites() {
         List<String> siteNameList = new ArrayList<>();
         List<String> allStrings = ReadAllStringsFromMMLFile.getAllStrings();
