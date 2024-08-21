@@ -15,8 +15,8 @@ public class GetSiteOffMap {
                     disconnectedSitesList.add(allStrings.get(i).substring(5));
                 }
             }
-        for (int i = 0; i < disconnectedSitesList.size(); i++) {
-            neDisconnectedMap.put(disconnectedSitesList.get(i), "NE is Disconnected");
+        for (String s : disconnectedSitesList) {
+            neDisconnectedMap.put(s, "NE is Disconnected");
         }
             return neDisconnectedMap;
     }

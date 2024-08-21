@@ -1,4 +1,4 @@
-import java.util.Map;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -6,8 +6,7 @@ public class Main {
        WrightAllWorkingSitesFile.wrightAllWorkingSitesFile();
        WrightPowerOffFile.wrightAllWorkingSitesFile();
        WrightMistakes.wrightAllWorkingSitesFile();
-        System.out.println(FindPath.findPath("C:\\Users\\user\\Downloads"));
-       WrightNeIsDisconnected.wrightAllWorkingSitesFile();
+       WrightNeIsDisconnected.wrightNeIsDisconnected();
 
     }
 }

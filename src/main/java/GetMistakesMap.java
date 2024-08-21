@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -23,18 +22,10 @@ public class GetMistakesMap {
                     System.out.println("NotOK!!! нет измерений");
                         mistakesMap.put(entry.getKey(), entry.getValue());
                 } else if (entry.getValue().getPoint1() instanceof String && entry.getValue().getPoint2() instanceof Double) {
- //                 Double voltage2 = (Double) entry.getValue().getPoint2();
-//                  if (voltage2 < Constant.TRESHOLD_DOWN_POWER_VOLTAGE && voltage2 > Constant.TRESHOLD_UP_POWER_VOLTAGE){
-//                      mistakesMap.put(entry.getKey(), entry.getValue());
-//                  }
                     System.out.println("NotOK!!! нет измерений на 1-й стойке");
                     mistakesMap.put(entry.getKey(), entry.getValue());
                 }else if (entry.getValue().getPoint1() instanceof Double && entry.getValue().getPoint2() instanceof String) {
-//                  Double voltage1 = (Double) entry.getValue().getPoint1();
-//                  if (voltage1 < Constant.TRESHOLD_DOWN_POWER_VOLTAGE){
-//                      mistakesMap.put(entry.getKey(), entry.getValue());
-//
-//                  }
+
                   System.out.println("NotOK!!! нет измерений на 2-й стойке");
                     mistakesMap.put(entry.getKey(), entry.getValue());
                 }

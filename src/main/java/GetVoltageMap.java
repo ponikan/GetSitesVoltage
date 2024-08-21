@@ -16,10 +16,7 @@ public class GetVoltageMap {
 
         int counter = -1;
       //  Pattern pattern = Pattern.compile("\\d.*"); // регулярка на цифры
-        Pattern patternDigit = Pattern.compile("\\d+$"); // регулярка на цифры
-        Pattern patternNotDigit = Pattern.compile("\\D+$"); // регулярка на нецифры
-
-
+        Pattern patternDigit = Pattern.compile("\\d+$"); // регулярка на цифр
         for (int i = 0; i < allStringsFromMMlFile.size(); i++) {
             String str = allStringsFromMMlFile.get(i);
             if (str.equals("(Number of results = 1)")) {

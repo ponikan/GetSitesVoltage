@@ -15,17 +15,12 @@ public abstract class Cabinet<T> {
         return point1;
     }
 
-    public void setPoint1(T point1) {
-        this.point1 = point1;
-    }
+
 
     public T getPoint2() {
         return point2;
     }
 
-    public void setPoint2(T point2) {
-        this.point2 = point2;
-    }
 
     @Override
     public String toString() {

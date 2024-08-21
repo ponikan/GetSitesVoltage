@@ -3,11 +3,8 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class FindPath {
 
@@ -19,7 +16,7 @@ public class FindPath {
                     .filter(Files::isRegularFile).map(Path::toFile)
                    .sorted(Comparator.comparingLong(File::lastModified))
                    .map(File :: toPath)
-                   .collect(Collectors.toList());
+                   .toList();
         } catch (IOException e) {
             throw new MyException("Что то не так с входным файлом",e);
         }
