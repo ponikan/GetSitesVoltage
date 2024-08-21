@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -11,34 +10,47 @@ public class GetPowerOffMap {
 
         for (Map.Entry<String,Cabinet> entry : pointsMap.entrySet()){
 
+
+
+
             if(entry.getValue().getPoint1() !=null && entry.getValue().getPoint2() !=null){
                 Class classPoint1 = entry.getValue().getPoint1().getClass();
                 Class classPoint2 = entry.getValue().getPoint2().getClass();
-                if (classPoint1.isNestmateOf(Double.class) && classPoint2.isNestmateOf(Double.class)){
-                    if((Double) entry.getValue().getPoint1() < Constant.TRESHOLD_POWER_VOLTAGE || (Double) entry.getValue().getPoint2() < Constant.TRESHOLD_POWER_VOLTAGE){
+
+                if (classPoint1.isNestmateOf(Double.class) && classPoint2.isNestmateOf(Double.class) ){
+                    Double voltage1 = (Double) entry.getValue().getPoint1();
+                    Double voltage2 = (Double) entry.getValue().getPoint2();
+                    if(voltage1 < Constant.TRESHOLD_UP_POWER_VOLTAGE && voltage1 > Constant.TRESHOLD_DOWN_POWER_VOLTAGE
+                            || voltage2 < Constant.TRESHOLD_UP_POWER_VOLTAGE && voltage2 > Constant.TRESHOLD_DOWN_POWER_VOLTAGE){
                         System.out.println("OK!!!");
                         powerOffMap.put(entry.getKey(), entry.getValue());
                     }
                 } else if (classPoint1.isNestmateOf(String.class) && classPoint2.isNestmateOf(Double.class)){
-                    if ((Double) entry.getValue().getPoint2() < Constant.TRESHOLD_POWER_VOLTAGE){
+                    Double voltage2 = (Double) entry.getValue().getPoint2();
+                    if (voltage2 < Constant.TRESHOLD_UP_POWER_VOLTAGE && voltage2 > Constant.TRESHOLD_DOWN_POWER_VOLTAGE){
                         powerOffMap.put(entry.getKey(), entry.getValue());
                     }
                 } else if (classPoint1.isNestmateOf(Double.class) && classPoint2.isNestmateOf(Double.class)) {
-                    if ((Double) entry.getValue().getPoint1() < Constant.TRESHOLD_POWER_VOLTAGE){
+                    Double voltage1 = (Double) entry.getValue().getPoint1();
+                    if (voltage1 < Constant.TRESHOLD_UP_POWER_VOLTAGE && voltage1 > Constant.TRESHOLD_DOWN_POWER_VOLTAGE){
                         powerOffMap.put(entry.getKey(), entry.getValue());
                     }
                 }
             } else if (entry.getValue().getPoint1() !=null && entry.getValue().getPoint2() == null){
-                if (entry.getValue().getPoint1().getClass().isNestmateOf(Double.class)){
-                    if((Double) entry.getValue().getPoint1() < Constant.TRESHOLD_POWER_VOLTAGE){
+                Class classPoint1 = entry.getValue().getPoint1().getClass();
+                if (classPoint1.isNestmateOf(Double.class)){
+                    Double voltage1 = (Double) entry.getValue().getPoint1();
+                    if(voltage1 < Constant.TRESHOLD_UP_POWER_VOLTAGE && voltage1 > Constant.TRESHOLD_DOWN_POWER_VOLTAGE){
                         System.out.println("OK!!!");
                         powerOffMap.put(entry.getKey(), entry.getValue());
                     }
                 }
             }
             else if (entry.getValue().getPoint1() == null && entry.getValue().getPoint2() !=null){
-                if (entry.getValue().getPoint2().getClass().isNestmateOf(Double.class)){
-                    if((Double) entry.getValue().getPoint2() < Constant.TRESHOLD_POWER_VOLTAGE){
+                Class classPoint2 = entry.getValue().getPoint2().getClass();
+                if (classPoint2.isNestmateOf(Double.class)){
+                    Double voltage2 = (Double) entry.getValue().getPoint2();
+                    if(voltage2 < Constant.TRESHOLD_UP_POWER_VOLTAGE && voltage2 > Constant.TRESHOLD_DOWN_POWER_VOLTAGE){
                         System.out.println("OK!!!");
                         powerOffMap.put(entry.getKey(), entry.getValue());
                     }
